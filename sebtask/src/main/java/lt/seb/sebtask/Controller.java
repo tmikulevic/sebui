@@ -15,8 +15,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-
-
 @RestController
 public class Controller {
 	private static final String HOST_IP = "http://localhost:4200";
@@ -35,7 +33,7 @@ public class Controller {
 		catch (Exception e) {
 		      e.printStackTrace();
 		}
-		System.out.println(buildList());
+		//TODO: return
 		return "ok";
 	}
 	
@@ -51,7 +49,6 @@ public class Controller {
 	  @RequestMapping(method = RequestMethod.GET, value = "/getlst")
 	  @ResponseBody
 	  public String getlst() {
-		  System.out.println(buildList());
 	     return buildList();
 	  }
 	  
@@ -71,7 +68,7 @@ public class Controller {
 		      }
 
 		      try {
-		    	  listString.append( mapperOut.writeValueAsString( Information.class ) );
+		    	  listString.append( mapperOut.writeValueAsString( info ) );
 		      } catch (JsonProcessingException e1) {
 		        e1.printStackTrace();
 		      }
