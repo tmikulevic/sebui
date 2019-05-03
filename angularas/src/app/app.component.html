@@ -1,0 +1,43 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome!
+  </h1>
+</div>
+<h2>Fill information </h2>
+<div class="col-md-6">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="inputFirstName">Name :</label>
+        <input type="text" class="form-control" id="inputFirstName" placeholder="Name" [(ngModel)]="description.name">
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="inputLastName">Surname :</label>
+        <input type="text" class="form-control" id="inputLastName" placeholder="Surname" [(ngModel)]="description.surname">
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="inputDate">Birth date :</label>
+        <input type="date" class="form-control" id="inputDate" placeholder="BirthDate" [(ngModel)]="description.birthDate">
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="inputPhone">Phone :</label>
+        <input type="text" class="form-control" id="inputPhone" placeholder="Phone" [(ngModel)]="description.phone">
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="inputEmail">E-mail :</label>
+        <input type="text" class="form-control" id="inputEmail" placeholder="Email" [(ngModel)]="description.email">
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
