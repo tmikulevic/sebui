@@ -9,6 +9,7 @@ public class Information {
 	private Date birthDate;
 	private String phone;
 	private String email;
+	
 	public String getName() {
 		return name;
 	}
