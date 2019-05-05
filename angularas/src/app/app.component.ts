@@ -3,6 +3,7 @@ import {OnInit} from '@angular/core';
 import { DescriptionService } from './app.service';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { LocalDataSource } from 'ng2-smart-table';
 
 @Component({
   selector: 'app-root',
@@ -14,12 +15,56 @@ export class AppComponent implements OnInit{
   description: any;
   title = 'angularas';
   respObjects: Object [];
+  
+  settings = {
+    noDataMessage: '',
+    actions: {
+      position: 'right',
+      add: false,
+      delete: false,
+      edit: false
+    },
+    mode: 'external',
+    columns: {
+      name: {
+        title: 'Name',
+        type: 'string',
+      },
+      surname: {
+        title: 'Surname',
+        type: 'string',
+      },
+      birthDate: {
+        title: 'Birth date',
+        type: 'string',
+      },
+      phone: {
+        title: 'Phone number',
+        type: 'string',
+      },
+      email: {
+        title: 'E-mail',
+        type: 'string',
+      },
+    },
+  };
 
+  source: LocalDataSource = new LocalDataSource();
+  
   constructor(private descriptionService: DescriptionService,
     private http: HttpClient,
     private router: Router){ }
 
+  getData() {
+    this.http.get('http://localhost:8080/getlst').subscribe(
+      data => {
+        this.source.load(JSON.parse(JSON.stringify(data)));
+      },
+    );
+  }
+
   ngOnInit(){
+    this.getData();
     this.description = this.descriptionService.getDescription();
   }
 
@@ -47,5 +92,7 @@ export class AppComponent implements OnInit{
         console.log(err);
       }
     );
+
+    window.location.reload();
   }
 }

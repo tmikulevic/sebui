@@ -41,7 +41,7 @@ public class Controller {
 	  @RequestMapping(method = RequestMethod.POST, value = "/create")
 	  @ResponseBody
 	  public String create(@RequestBody String json) {
-		  System.out.println("vykdoma");
+		  System.out.println(json);
 		  return createCustomer(json);
 	  }
 	 
@@ -49,7 +49,7 @@ public class Controller {
 	  @RequestMapping(method = RequestMethod.GET, value = "/getlst")
 	  @ResponseBody
 	  public String getlst() {
-	     return buildList();
+		return buildList();
 	  }
 	  
 	  public String buildList() {
@@ -76,7 +76,7 @@ public class Controller {
 		    }
 		    
 		    listString.append("\n]\n");
-		    
+
 		    return listString.toString();
 		  }
 }

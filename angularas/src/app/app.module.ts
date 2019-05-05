@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DescriptionService } from './app.service';
 
+import { Ng2SmartTableModule } from 'ng2-smart-table';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { DescriptionService } from './app.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    Ng2SmartTableModule
   ],
   providers: [
     AppComponent,

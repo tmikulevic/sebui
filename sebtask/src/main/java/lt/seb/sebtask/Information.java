@@ -1,12 +1,10 @@
 package lt.seb.sebtask;
 
-import java.util.Date;
-
 public class Information {
 
 	private String name;
 	private String surname;
-	private Date birthDate;
+	private String birthDate;
 	private String phone;
 	private String email;
 	
@@ -22,10 +20,10 @@ public class Information {
 	public void setSurname(String surname) {
 		this.surname = surname;
 	}
-	public Date getBirthDate() {
+	public String getBirthDate() {
 		return birthDate;
 	}
-	public void setBirthDate(Date birthDate) {
+	public void setBirthDate(String birthDate) {
 		this.birthDate = birthDate;
 	}
 	public String getPhone() {
